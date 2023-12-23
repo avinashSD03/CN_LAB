@@ -11,9 +11,9 @@ $ns color 2 Red
 
 #Open trace and NAM trace file
 
-set ntrace [open prog3.tr w]
+set ntrace [open prog3.tr w]  # in place "prog3.tr" write filename you create in exam i.e "filename.tr"
 $ns trace-all $ntrace
-set namfile [open prog3.nam w]
+set namfile [open prog3.nam w]  # in place "prog3.nam" write filename you create in exam i.e "filename.nam"
 $ns namtrace-all $namfile
 
 
@@ -33,7 +33,7 @@ close $namfile
 
 #Execute the nam animation file
 
-exec nam prog3.nam &
+exec nam prog3.nam &  # in place "prog3.nam" write filename you create in exam i.e "filename.nam"
 
 
 #Find the number of ping packets dropped
@@ -78,9 +78,11 @@ ms"
 set p0 [new Agent/Ping]
 $p0 set class_ 1
 $ns attach-agent $n(0) $p0
+
 set p1 [new Agent/Ping]
 $p1 set class_ 1
 $ns attach-agent $n(5) $p1
+
 $ns connect $p0 $p1
 
 
@@ -97,8 +99,10 @@ $ns duplex-link-op $n(2) $n(3) queuePos 0.5
 set tcp0 [new Agent/TCP]
 $tcp0 set class_ 2
 $ns attach-agent $n(2) $tcp0
+
 set sink0 [new Agent/TCPSink]
 $ns attach-agent $n(4) $sink0
+
 $ns connect $tcp0 $sink0
 
 
