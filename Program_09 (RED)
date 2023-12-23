@@ -33,14 +33,14 @@ public class RedCongestionControl
             double dropProbability = calculateDropProbability(queueLength, queueSize, maxProbability, minProbability, threshold);
 
             if (queueLength >= threshold && rand.nextDouble() < dropProbability) 
-            {
                 System.out.println("Packet dropped (CONGESTION AVOIDANCE)");
-            } 
+
             else 
             {
                 System.out.println("Packet accepted " + (i + 1));
                 queueLength++;
             }
+
         }
     }
 
