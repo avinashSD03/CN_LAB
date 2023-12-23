@@ -3,9 +3,10 @@ set ns [new Simulator]
 $ns color 1 Red
 $ns color 2 Blue
 
-set na [open Lab3.nam w]
+set na [open Lab3.nam w]  # in place "Lab3.nam" write filename you create in exam i.e "filename.nam"
 $ns namtrace-all $na
-set nt [open Lab3.tr w]
+
+set nt [open Lab3.tr w]  # in place "Lab3.tr" write filename you create in exam i.e "filename.tr"
 $ns trace-all $nt
 
 set ng1 [open tcp1.xg w]
@@ -51,7 +52,7 @@ $ns flush-trace
 close $na
 close $nt
 
-exec nam Lab3.nam &
+exec nam Lab3.nam &  # in place "Lab3.nam" write filename you create in exam i.e "filename.nam"
 exec xgraph tcp1.xg tcp2.xg &
 exit 0
 
