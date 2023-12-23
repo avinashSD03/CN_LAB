@@ -11,7 +11,6 @@ public class TCPC
         String fname=keyRead.readLine();
 
         OutputStream ostream=sock.getOutputStream();
-
         PrintWriter pwrite=new PrintWriter(ostream, true);
         pwrite.println(fname);
 
