@@ -1,9 +1,9 @@
 set ns [new Simulator]
 
-set na [open Lab4.nam w]
+set na [open Lab4.nam w]  # in place "Lab4.nam" write filename you create in exam i.e "filename.nam"
 $ns namtrace-all-wireless $na 500 500
 
-set nt [open Lab4.tr w]
+set nt [open Lab4.tr w]  # in place "Lab4.tr" write filename you create in exam i.e "filename.tr"
 $ns trace-all $nt
 
 set topo [new Topography]
@@ -80,7 +80,7 @@ $ns flush-trace
 close $na
 close $nt
 
-exec nam Lab4.nam &
+exec nam Lab4.nam &  # in place "Lab4.nam" write filename you create in exam i.e "filename.nam"
 
 }
 
