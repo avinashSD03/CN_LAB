@@ -5,9 +5,9 @@ set ns [new Simulator]
 
 #Open Trace file and NAM file
 
-set ntrace [open prog1.tr w]
+set ntrace [open prog1.tr w]  # in place "prog1.tr" write filename you create in exam i.e "filename.tr"
 $ns trace-all $ntrace
-set namfile [open prog1.nam w]
+set namfile [open prog1.nam w]  # in place "prog1.nam" write filename you create in exam i.e "filename.nam"
 $ns namtrace-all $namfile
 
 
@@ -26,7 +26,7 @@ close $namfile
 
 #Execute the nam animation file
 
-exec nam prog1.nam &
+exec nam prog1.nam &  # in place "prog1.nam" write filename you create in exam i.e "filename.nam"
 
 
 #Show the number of packets dropped
