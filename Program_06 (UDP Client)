@@ -12,7 +12,7 @@ public class UDPClient
         System.out.println("Enter the string in lowercase so that you receive the message in Uppercase from the server");
         String sentence=inPut.readLine();
         sendData=sentence.getBytes();
-        DatagramPacket sendPack = new DatagramPacket(sendData, sendData.length, IPAddress, 9884);
+        DatagramPacket sendPack = new DatagramPacket(sendData, sendData.length,ipAdd, 9884);
         clientSock.send(sendPacket);
         DatagramPacket recvPack=new DatagramPacket(receiveData, receiveData.length);
         clientSock.receive(recvPack);
