@@ -14,8 +14,8 @@ public class TCPC
         PrintWriter pwrite=new PrintWriter(ostream, true);
         pwrite.println(fname);
 
-        BufferedReader sockRead=new BufferedReader(new InputStreamReader(istream));
         InputStream istream=sock.getInputStream();
+        BufferedReader sockRead=new BufferedReader(new InputStreamReader(istream));
 
         String str;
         while((str=socketRead.readLine())!=null)
