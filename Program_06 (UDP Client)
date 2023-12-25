@@ -19,7 +19,7 @@ public class UDPClient
         DatagramPacket sendPack = new DatagramPacket(sendData, sendData.length,ipAdd, 9884);
         clientSock.send(sendPack);
 
-        DatagramPacket recvPack=new DatagramPacket(receiveData, receiveData.length);
+        DatagramPacket recvPack=new DatagramPacket(recvData, recvData.length);
         clientSock.receive(recvPack);
 
         String modifiedSentence=new String(recvPack.getData());
