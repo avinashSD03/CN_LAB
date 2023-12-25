@@ -18,7 +18,7 @@ public class TCPC
         BufferedReader sockRead=new BufferedReader(new InputStreamReader(istream));
 
         String str;
-        while((str=socketRead.readLine())!=null)
+        while((str=sockRead.readLine())!=null)
             System.out.println(str);
 
         pwrite.close();
