@@ -1,1 +1,1 @@
-## CN Lab programs for lab internals.
+## CN Lab programs for lab internals and final exam.
