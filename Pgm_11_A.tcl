@@ -1,9 +1,9 @@
 set ns [new Simulator]
 $ns color 1 Red
 $ns color 2 Blue
-set na [open Lab3.nam w]
+set na [open Pgm_11_A.nam w]
 $ns namtrace-all $na
-set nt [open Lab3.tr w]
+set nt [open Pgm_11_A.tr w]
 $ns trace-all $nt
 set ng1 [open tcp1.xg w]
 set ng2 [open tcp2.xg w]
@@ -30,16 +30,16 @@ $ns attach-agent $n2 $sink1
 $ns attach-agent $n5 $sink2
 $ns connect $tcp1 $sink1
 $ns connect $tcp2 $sink2
-proc End {}{
+proc End {} {
 global ns na nt
 $ns flush-trace
 close $na
 close $nt
-exec nam Lab3.nam &
+exec nam Pgm_11_A.nam &
 exec xgraph tcp1.xg tcp2.xg &
 exit 0
 }
-proc Draw {Agent File}{
+proc Draw {Agent File} {
 global ns
 set Cong [$Agent set cwnd_]
 set Time [$ns now]
