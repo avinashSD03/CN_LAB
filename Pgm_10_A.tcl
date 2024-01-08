@@ -8,7 +8,7 @@ global ns ntrace namfile
 $ns flush-trace
 close $ntrace
 close $namfile
-exec nam prog1.nam &
+exec nam Pgm_10_A.nam &
 exec echo "The number of packet drops is " &
 exec grep -c "^d" Pgm_10_A.tr &
 exit 0
