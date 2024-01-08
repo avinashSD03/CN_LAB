@@ -1,27 +1,27 @@
 set ns [new Simulator]
 $ns color 1 Blue
 $ns color 2 Red
-set ntrace [open prog3.tr w]  
+set ntrace [open Pgm_10_B.tr w]  
 $ns trace-all $ntrace
-set namfile [open prog3.nam w]  
+set namfile [open Pgm_10_B.nam w]  
 $ns namtrace-all $namfile
-proc Finish {}{
+proc Finish {} {
 global ns ntrace namfile
 $ns flush-trace
 close $ntrace
 close $namfile
-exec nam prog3.nam &
+exec nam Pgm_10_B.nam &
 puts "The number of ping packets dropped are "
-exec grep "^d" prog3.tr | cut -d " " -f 5 | grep -c "ping" &
+exec grep "^d" Pgm_10_B.tr | cut -d " " -f 5 | grep -c "ping" &
 exit 0
 }
-for {set i 0} {$i < 6} {incr i}{
+for {set i 0} {$i < 6} {incr i} {
 set n($i) [$ns node]
 }
-for {set j 0} {$j < 5} {incr j}{
+for {set j 0} {$j < 5} {incr j} {
 $ns duplex-link $n($j) $n([expr ($j+1)]) 0.1Mb 10ms DropTail
 }
-Agent/Ping instproc recv {from rtt}{
+Agent/Ping instproc recv {from rtt} {
 $self instvar node_
 puts "node [$node_ id] received ping answer from $from with round trip time $rtt
 ms"
