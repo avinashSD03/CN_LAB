@@ -1,16 +1,16 @@
 set ns [new Simulator]
-set ntrace [open prog1.tr w]  
+set ntrace [open Pgm_10_A.tr w]  
 $ns trace-all $ntrace
-set namfile [open prog1.nam w] 
+set namfile [open Pgm_10_A.nam w] 
 $ns namtrace-all $namfile
-proc Finish {}{
+proc Finish {} {
 global ns ntrace namfile
 $ns flush-trace
 close $ntrace
 close $namfile
 exec nam prog1.nam &
 exec echo "The number of packet drops is " &
-exec grep -c "^d" prog1.tr &
+exec grep -c "^d" Pgm_10_A.tr &
 exit 0
 }
 set n0 [$ns node]
