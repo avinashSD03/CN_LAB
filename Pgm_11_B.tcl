@@ -1,7 +1,7 @@
 set ns [new Simulator]
-set na [open Lab4.nam w]
+set na [open Pgm_11_B.nam w]
 $ns namtrace-all-wireless $na 500 500
-set nt [open Lab4.tr w]
+set nt [open Pgm_11_B.tr w]
 $ns trace-all $nt
 set topo [new Topography]
 $topo load_flatgrid 500 500
@@ -52,12 +52,12 @@ set cbr2 [new Application/Traffic/CBR]
 $cbr2 attach-agent $tcp2
 $ns connect $tcp1 $sink1
 $ns connect $tcp2 $sink2
-proc End {}{
+proc End {} {
 global ns nt na
 $ns flush-trace
 close $na
 close $nt
-exec nam Lab4.nam &
+exec nam Pgm_11_B.nam &
 }
 $ns at 0.0 "$cbr1 start"
 $ns at 0.0 "$cbr2 start"
@@ -65,12 +65,12 @@ $ns at 10.0 "End"
 $ns run
 AWK Code
 |
-BEGIN{Num_of_pkts=0;}{
-if ($1 == "r" && $3 == "_1_" && $4 == "AGT" && $7 == "tcp"){
+BEGIN{Num_of_pkts=0;} {
+if ($1 == "r" && $3 == "1" && $4 == "AGT" && $7 == "tcp") {
 Num_of_pkts = Num_of_pkts + $8;
 }
 }
-END{
+END {
 Throughput = Num_of_pkts * 8 / $2 /1000000;
 printf("\n\n\tThroughput = %fbpms\n\n\n",Throughput);
 }
